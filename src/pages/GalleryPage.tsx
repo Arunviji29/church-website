@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { X, ChevronLeft, ChevronRight, ImageIcon, Loader2 } from 'lucide-react';
 import PageHero from '../components/PageHero';
+import SEO from '../components/SEO';
 import { ErrorBanner } from '../components/admin/ui';
 import { useGallery } from '../lib/hooks';
 import type { GalleryItem } from '../lib/types';
@@ -64,6 +65,11 @@ export default function GalleryPage() {
 
   return (
     <>
+      <SEO
+        title="Photo Gallery — Life, Worship & Fellowship at Grace"
+        description="Explore photo albums from Grace Community Church: Sunday worship, community service days, youth retreats, choir performances, and holiday celebrations."
+        image={IMAGES.community}
+      />
       <PageHero
         title="Photo Gallery"
         subtitle="A glimpse into the life of our church family — festivals, worship, service, and celebration."

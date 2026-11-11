@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, Loader2 } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import SermonCard from '../components/SermonCard';
 import NotFoundPage from './NotFoundPage';
+import SEO from '../components/SEO';
 import { useSermons } from '../lib/hooks';
 import { formatDate } from '../lib/types';
 
@@ -27,6 +28,15 @@ export default function SermonDetailPage() {
 
   return (
     <>
+      <SEO
+        title={`${sermon.title} — ${sermon.speaker}`}
+        description={
+          sermon.description ||
+          `Listen to ${sermon.title} preached by ${sermon.speaker} at Grace Community Church.`
+        }
+        image={sermon.thumbnail_url}
+        type="article"
+      />
       <PageHero
         title={sermon.title}
         subtitle={[

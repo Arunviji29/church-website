@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Lock, Mail, ArrowLeft, LogIn } from 'lucide-react';
+import SEO from '../components/SEO';
 import { useAuth } from '../lib/auth';
 
 export default function LoginPage() {
@@ -31,7 +32,12 @@ export default function LoginPage() {
     'w-full rounded-xl border border-neutral-200 bg-cream px-4 py-3 pl-11 text-sm text-ink outline-none transition-colors placeholder:text-neutral-400 focus:border-gold focus:ring-2 focus:ring-gold/30';
 
   return (
-    <section className="container-site flex min-h-[70vh] items-center justify-center py-16">
+    <>
+      <SEO
+        title="Admin Sign In"
+        description="Church staff and admin portal for Grace Community Church."
+      />
+      <section className="container-site flex min-h-[70vh] items-center justify-center py-16">
       <div className="w-full max-w-md">
         <Link
           to="/"
@@ -125,5 +131,6 @@ export default function LoginPage() {
         </div>
       </div>
     </section>
+  </>
   );
 }
